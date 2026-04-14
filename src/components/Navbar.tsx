@@ -13,13 +13,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={cn(navbar.base, scrolled ? navbar.scrolled : navbar.top)}>
+    <header className={cn(navbar.base, scrolled ? `${navbar.scrolled} navbar-scrolled` : navbar.top)}>
       <div className={navbar.container}>
-        <div className={navbar.logo}>
-          <span className="text-white font-bold text-xl tracking-tight">
-            Rilix<span className="text-[#5b97cd]">.</span>
-          </span>
-        </div>
+        <a href="#" className="navbar-logo">
+          <img
+            src="/assets/images/logo-rilix.png"
+            alt="Rilix"
+            className="logo-img"
+          />
+        </a>
 
         <nav className={navbar.links}>
           <a href="#beneficios" className={navbar.link}>Benefícios</a>
