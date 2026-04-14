@@ -55,11 +55,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <button className={hero.btn}>
+          <a href="#contato" className={hero.btn}>
             <span className={hero.btnContent}>
               Falar com um Consultor <ArrowRight className={hero.btnIcon} />
             </span>
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
