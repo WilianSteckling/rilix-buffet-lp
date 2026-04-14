@@ -1,0 +1,73 @@
+﻿@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --rilix-accent: #5b97cd;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Único seletor global necessário para page.tsx */
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #050505;
+}
+
+@layer components {
+  .packshot-glow {
+    box-shadow: 0 0 60px color-mix(in srgb, #5b97cd 15%, transparent);
+    transition: box-shadow 0.4s ease;
+  }
+  .packshot-glow:hover {
+    box-shadow: 0 0 90px color-mix(in srgb, #5b97cd 25%, transparent);
+  }
+
+  .cta-input {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.9375rem;
+    color: #fff;
+    background: color-mix(in srgb, #fff 5%, transparent);
+    border: 1px solid color-mix(in srgb, #fff 10%, transparent);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cta-input::placeholder {
+    color: #9ca3af;
+  }
+  .cta-input:focus {
+    border-color: #5b97cd;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #5b97cd 25%, transparent);
+  }
+
+  .cta-btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    background: #5b97cd;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  .cta-btn-submit:hover {
+    background: #4a83b8;
+    transform: scale(1.03);
+    box-shadow: 0 0 30px color-mix(in srgb, #5b97cd 30%, transparent);
+  }
+}
