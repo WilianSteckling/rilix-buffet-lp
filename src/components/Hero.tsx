@@ -47,7 +47,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className={hero.desc}
         >
-          O simulador de Realidade Virtual Rilix Coaster oferece uma experiência imersiva que atrai novos clientes, fideliza pais e crianças, e aumenta drasticamente o ticket médio das suas festas.
+          O simulador de Realidade Virtual Rilix Coaster oferece uma experiência imersiva que atrai novos clientes, fideliza pais e crianças, e aumenta consideravelmente o ticket médio das suas festas.
         </motion.p>
 
         <motion.div

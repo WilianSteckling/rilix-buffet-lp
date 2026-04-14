@@ -39,7 +39,7 @@ const features = [
 
 export default function BentoFeatures() {
   return (
-    <section className={bento.section}>
+    <section id="beneficios" className={bento.section}>
       <div className={bento.header}>
         <h2 className={bento.title}>
           Projetado para o seu <span className={shared.textAccent}>Lucro</span>

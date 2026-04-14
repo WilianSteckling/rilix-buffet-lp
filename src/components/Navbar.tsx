@@ -29,7 +29,7 @@ export default function Navbar() {
           <a href="#faq" className={navbar.link}>FAQ</a>
         </nav>
 
-        <button className={navbar.btn}>Falar com Consultor</button>
+        <a href="#contato" className={navbar.btn}>Falar com Consultor</a>
       </div>
     </header>
   );
