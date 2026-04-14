@@ -50,7 +50,7 @@ export const hero = {
   title:          "text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500",
   titleHighlight: "text-white drop-shadow-[0_0_15px_rgba(91,151,205,0.5)]",
   desc:           "text-lg md:text-xl text-gray-400 mb-10 max-w-2xl",
-  btn:            "relative px-8 py-4 font-semibold text-black bg-white rounded-full overflow-hidden transition-all group hover:scale-105 hover:shadow-[0_0_40px_rgba(91,151,205,0.4)]",
+  btn:            "inline-flex relative px-8 py-4 font-semibold text-black bg-white rounded-full overflow-hidden transition-all group hover:scale-105 hover:shadow-[0_0_40px_rgba(91,151,205,0.4)]",
   btnContent:     "relative z-10 flex items-center gap-2",
   btnIcon:        "w-4 h-4 group-hover:translate-x-1 transition-transform",
 };
