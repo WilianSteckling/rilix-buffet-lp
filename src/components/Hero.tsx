@@ -8,15 +8,15 @@ export default function Hero() {
   return (
     <section className={hero.section}>
       <div className={hero.bg}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={hero.video}
-        >
-          <source src="/assets/video/video-hero.mp4" type="video/mp4" />
-        </video>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <iframe
+            src="https://www.youtube.com/embed/qDXnbK1i6Ow?autoplay=1&mute=1&loop=1&playlist=qDXnbK1i6Ow&controls=0&disablekb=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&playsinline=1"
+            title="Background video"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full border-0 opacity-40 mix-blend-screen"
+          />
+        </div>
         <div className={hero.overlay}></div>
       </div>
 
