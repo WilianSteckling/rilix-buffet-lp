@@ -51,7 +51,7 @@ export default function CTA() {
             />
             <button type="submit" className={ctaStyles.btnSubmit}>
               <Send className="w-5 h-5" />
-              Solicitar Proposta
+              Solicitar Atendimento
             </button>
           </form>
         </div>
