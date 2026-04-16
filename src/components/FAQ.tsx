@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "Como funciona a cobrança com as famílias? Posso cobrar pelo uso?",
-    answer: "Sim! Você pode cobrar separadamente pelo uso do Rilix ou incluir no pacote da festa. A maioria dos nossos parceiros cobra entre R$10 e R$20 por criança por sessão (3-5 minutos) ou inclui como diferencial no pacote premium com ticket maior. Nossa equipe comercial te orienta na melhor estratégia para o seu buffet."
+    answer: "Sim! Você pode cobrar separadamente pelo uso do Rilix ou incluir no pacote da festa. A maioria dos nossos parceiros cobra entre R$15 e R$20 por criança por sessão (3-5 minutos) ou inclui como diferencial no pacote premium com ticket maior. Nossa equipe comercial te orienta na melhor estratégia para o seu buffet."
   },
   {
     question: "O conteúdo VR é atualizado? Como ficam as novidades?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "Em quanto tempo recupero o investimento?",
-    answer: "Com base nos dados dos nossos parceiros, o retorno médio do investimento ocorre entre 8 e 12 meses. Isso considerando buffets que realizam entre 10 e 15 festas por mês e cobram entre R$10 e R$20 por criança. Obviamente, o resultado varia de acordo com o número de festas e a estratégia de precificação adotada."
+    answer: "Com base nos dados dos nossos parceiros, o retorno médio do investimento ocorre entre 8 e 12 meses. Isso considerando buffets que realizam entre 10 e 15 festas por mês e cobram entre R$15 e R$20 por criança. Obviamente, o resultado varia de acordo com o número de festas e a estratégia de precificação adotada."
   }
 ];
 
