@@ -10,6 +10,7 @@ const features = [
     description: "Atração premium que permite cobrar pacotes VIPs mais caros nas suas festas.",
     icon: <TrendingUp className={icons.green} />,
     className: "md:col-span-2",
+    isROI: true,
   },
   {
     title: "Seguro para Crianças",
@@ -31,7 +32,7 @@ const features = [
   },
   {
     title: "Suporte Completo",
-    description: "Equipe dedicada para ajudar em todas as etapas.",
+    description: "Equipe dedicada para ajudar em todas as etapas. Disponível todos os dias, inclusive finais de semana.",
     icon: <UserCogIcon className={icons.purple} />,
     className: "md:col-span-1",
   },
@@ -57,7 +58,11 @@ export default function BentoFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={cn(bento.card, shared.glassPanel, feature.className)}
+            className={cn(
+              bento.card,
+              feature.isROI ? "roi-animated-border" : shared.glassPanel,
+              feature.className
+            )}
           >
             <div>
               <div className={bento.cardIconWrapper}>

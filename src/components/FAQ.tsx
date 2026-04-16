@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
     question: "O equipamento é seguro para crianças pequenas?",
-    answer: "Sim! O Rilix Coaster é certificado e foi desenvolvido com foco total em segurança. É indicado para crianças a partir de 5 anos de idade. Os óculos de VR são adaptados ao tamanho do rosto infantil e a experiência é controlada para não causar nenhum desconforto. Já foram mais de 500.000 sessões realizadas sem nenhum incidente."
+    answer: "Sim! O Rilix Coaster é certificado e foi desenvolvido com foco total em segurança. É indicado para crianças a partir de 5 anos de idade. Os óculos de VR são adaptados ao tamanho do rosto infantil e a experiência é controlada para não causar nenhum desconforto. São mais de 450.000 sessões realizadas por mêssem nenhum incidente."
   },
   {
     question: "Precisa de muita infraestrutura ou obra para instalar?",
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "E se o equipamento apresentar algum problema?",
-    answer: "Você tem suporte técnico através de WhatsApp, telefone e e-mail. Em casos mais complexos, enviamos um técnico ao local sem custo adicional durante o período de garantia. Todos os equipamentos possuem garantia de 12 meses com possibilidade de extensão."
+    answer: "Você tem suporte técnico todo dia da semana através de WhatsApp, telefone e e-mail. Em casos mais complexos, enviamos um técnico ao local sem custo adicional durante o período de garantia. Todos os equipamentos possuem garantia de 12 meses com possibilidade de extensão."
   },
   {
     question: "Como funciona a cobrança com as famílias? Posso cobrar pelo uso?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "Em quanto tempo recupero o investimento?",
-    answer: "Com base nos dados dos nossos parceiros, o retorno médio do investimento ocorre entre 8 e 12 meses. Isso considerando buffets que realizam entre 6 e 10 festas por mês e cobram entre R$10 e R$20 por criança. Obviamente, o resultado varia de acordo com o número de festas e a estratégia de precificação adotada."
+    answer: "Com base nos dados dos nossos parceiros, o retorno médio do investimento ocorre entre 8 e 12 meses. Isso considerando buffets que realizam entre 10 e 15 festas por mês e cobram entre R$10 e R$20 por criança. Obviamente, o resultado varia de acordo com o número de festas e a estratégia de precificação adotada."
   }
 ];
 
@@ -36,40 +36,46 @@ export default function FAQ() {
   return (
     <section id="faq" className="faq-section">
       <div className="faq-header">
-        <h2 className="faq-title">
-          Dúvidas <span className="text-[#5b97cd]">Frequentes</span>
-        </h2>
-        <p className="faq-subtitle">Tudo o que você precisa saber antes de investir.</p>
+        <h2 className="faq-title">Perguntas <span className="text-accent">Frequentes</span></h2>
+        <p className="faq-subtitle">Tudo o que você precisa saber antes de transformar seu buffet.</p>
       </div>
 
       <div className="faq-list">
-        {faqs.map((faq, index) => (
-          <div key={index} className="faq-item">
-            <button
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="faq-question group"
-            >
-              <span>{faq.question}</span>
-              <ChevronDown 
-                /* Note que aqui já apliquei a nova cor #5b97cd */
-                className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 text-[#5b97cd] ${openIndex === index ? "rotate-180" : "group-hover:text-white"}`} 
-              />
-            </button>
-            <AnimatePresence>
-              {openIndex === index && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="faq-answer-wrapper"
-                >
-                  <p className="faq-answer">{faq.answer}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div key={index} className={`faq-item ${isOpen ? "border-[#5b97cd]/30 bg-white/[0.02]" : "border-white/5"}`}>
+              <button
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className="faq-question group"
+              >
+                <span className={isOpen ? "text-white" : "text-gray-300 group-hover:text-white transition-colors"}>
+                  {faq.question}
+                </span>
+                <div className="faq-icon-wrapper">
+                  {isOpen ? (
+                    <Minus className="w-5 h-5 text-[#5b97cd]" />
+                  ) : (
+                    <Plus className="w-5 h-5 text-gray-500 group-hover:text-[#5b97cd] transition-colors" />
+                  )}
+                </div>
+              </button>
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="faq-answer-wrapper"
+                  >
+                    <p className="faq-answer">{faq.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

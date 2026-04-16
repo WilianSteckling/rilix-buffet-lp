@@ -4,6 +4,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ── Animated Gradient Border (ROI card) ─────────────────────────────────── */
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes gradient-rotate {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
 :root {
   --background: #050505;
   --foreground: #ffffff;
@@ -25,6 +38,21 @@ body {
 }
 
 @layer components {
+  /* ── ROI Animated Border ─────────────────────────────────────────────── */
+  .roi-animated-border {
+    --_bg: #050505;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(var(--_bg), var(--_bg)) padding-box,
+      conic-gradient(
+        from var(--gradient-angle),
+        transparent 25%,
+        #5b97cd 50%,
+        transparent 75%
+      ) border-box;
+    animation: gradient-rotate 4s linear infinite;
+  }
+
   .navbar-logo {
     display: flex;
     align-items: center;
